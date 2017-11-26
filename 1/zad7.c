@@ -21,6 +21,8 @@ int * tab_pier(int len){
         }
     }
     if (lp == 0){
+      if (n >= len)
+        break;
       *(t+j) = n;
       j++;}
     n+=2;
@@ -33,16 +35,16 @@ int * tab_pier(int len){
 
 int main(int argc, char const *argv[]) {
   int n, i=0, j=0;
-  int *tab;
-  int result[1000] = {0};
+  int *tab, *result;
+
   printf("Podaj liczbe do rozkladu: ");
   scanf("%i", &n);
   tab = tab_pier(n);
-
+  result = (int*)malloc(n/2 * sizeof(int));
   while (n!=1){
     if (n%*(tab+i) == 0){
       n/=*(tab+i);
-      result[j] = *(tab+i);
+      *(result+j) = *(tab+i);
       j++;
     }
     else
@@ -50,7 +52,7 @@ int main(int argc, char const *argv[]) {
   }
   j=0;
   while (result[j] != 0){
-    printf("%i\n", result[j]);
+    printf("%i\n", *(result+j));
     j++;
   }
   return 0;
