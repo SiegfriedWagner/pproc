@@ -7,7 +7,7 @@ Założenie metody - funkcja jest ciągła
 4. Przypisz argumentowi, który ma ten sam znak co nowy argument wartość nowego argumentu.
 5. Powtarzaj do uzyskania satysfakcjonującego epsilona.
 */
-
+// by Mateusz Chojnowski
 #include <math.h>
 #include <stdio.h>
 double function (double x);
@@ -23,14 +23,15 @@ int main(int argc, char const *argv[]) {
       break;
     valb = function(argb);
     vala = function(arga);
-    if (valx*vala < 0){
+    if (valx*vala < 0)
       argb = argx;
-    }
-    else
+    else if (valx*valb < 0)
       arga=argx;
+    else{
+      printf("Podano złe przedziały\n");
+      break;
+    }
   }
-  if (fabs(valx) > 0.1)
-    printf("Uwaga, wartość nie zbliżyła się do 0 i wynosi f(%lf) = %lf\n", argx, valx);
   printf("Miejsce zerowe znajduje się w x = %lf", argx);
   // printf("%lf %lf %lf\n", arga, argb, epsilon);
   return 0;
