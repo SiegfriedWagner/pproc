@@ -1,3 +1,8 @@
+/*
+Program czyta liczbę zmeinnoprzecinkową z klawiatury,
+a następnie wyświetla 'przybliżenie'
+by Mateusz Chojnowski
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

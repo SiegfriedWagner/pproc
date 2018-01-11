@@ -6,7 +6,10 @@
 #define mxv 214748364
 #define mxp 7
 #define mxn 8
-// Do dokończenia, przerobić program tak, aby czytał te liczby w zakresie dodanim i ujemnym
+/*
+Program czyta liczby dodatnie i ujemne, sprawdza czy znajdują się
+w zakeresie od -2147483648 do 2147483647, a następnie je wyświetla.
+ */
 int main(int argc, char const *argv[]) {
   int c, x, k, pw, last_digit, previous_value, sign=1, mxc=7;
   c = getchar();
