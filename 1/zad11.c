@@ -14,6 +14,7 @@ double function (double x);
 
 int main(int argc, char const *argv[]) {
   double arga, argb, vala, valb, epsilon, argx, valx;
+  int exit_value = 0;
   printf("Podaj [poczatek przedzialu] [koniec przedzialu] [epislon]\n");
   scanf("%lf %lf %lf", &arga, &argb, &epsilon);
   while (fabs(arga-argb) > epsilon){
@@ -29,10 +30,12 @@ int main(int argc, char const *argv[]) {
       arga=argx;
     else{
       printf("Podano złe przedziały\n");
+      exit_value = 1;
       break;
     }
   }
-  printf("Miejsce zerowe znajduje się w x = %lf", argx);
+  if (exit_value == 0)
+    printf("Miejsce zerowe znajduje się w x = %lf\n", argx);
   // printf("%lf %lf %lf\n", arga, argb, epsilon);
   return 0;
 }
@@ -40,7 +43,7 @@ int main(int argc, char const *argv[]) {
 double function (double x){
   double result;
   // curve formula
-  result = x - 30;
+  result = pow(x,2) - 30;
   // result = pow(x,2);
   return result;
 }

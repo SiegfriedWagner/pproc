@@ -17,6 +17,6 @@ int n,m,c;
   }
   while(c!=0);
   printf("NWP wynosi: %i\n", m);
-  getchar()
+  // getchar\s\()
   return 0;
 }
